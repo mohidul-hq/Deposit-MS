@@ -79,7 +79,7 @@ function App() {
     if (!/^[0-9]{4}$/.test(String(formData.LAST_FOUR_NO))) e.LAST_FOUR_NO = "Last four digits must be exactly 4 numbers";
     if (!formData.LAST_DEPOSIT_DATE || isNaN(Date.parse(formData.LAST_DEPOSIT_DATE))) e.LAST_DEPOSIT_DATE = "Valid date is required (YYYY-MM-DD)";
     if (!formData.MONTHS_NAME || !formData.MONTHS_NAME.trim()) e.MONTHS_NAME = "Month name is required";
-    if (formData.COUNT_LEFT === "" || isNaN(Number(formData.COUNT_LEFT)) || Number(formData.COUNT_LEFT) < 0) e.COUNT_LEFT = "Count left must be a non-negative number";
+    // COUNT_LEFT is computed automatically, skip validation
     return e;
   }
 
